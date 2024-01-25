@@ -1,14 +1,15 @@
 import json
 import pymysql
+import os
 
 def lambda_handler(event, context):
     # Database connection parameters
-    host = 'database-spotdotbook.cno0eqmwo8tt.us-east-2.rds.amazonaws.com'
-    user = 'admin'
-    password = 'Picklehead123'
-    database = 'database-spotdotbook'
+    host = os.environ['DB_HOST']
+    user = os.environ['DB_USER']
+    password = os.environ['DB_PASSWORD']
+    database = os.environ['DB_DATABASE']
 
-    # Create a connection to the database
+    # Create a connection to the database!
     connection = pymysql.connect(host=host, user=user, password=password, db=database)
 
     try:
