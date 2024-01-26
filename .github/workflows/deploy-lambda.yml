@@ -69,7 +69,7 @@ jobs:
         zip -r ../updated_lambda.zip .
         cd ..
         # Upload the updated zip to S3
-        aws s3 cp updated_lambda.zip s3://$S3_BUCKET/$S3_KEY
+        aws s3 cp updated_lambda.zip s3://kylerasinger-aws-bucket/spotdotbook-rdssql-controller.zip
         # Update Lambda function code
         aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key $S3_KEY
         # Cleanup
