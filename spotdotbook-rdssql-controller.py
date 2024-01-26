@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     password = os.environ['DB_PASSWORD']
     database = os.environ['DB_DATABASE']
 
-    # Create a connection to the database!
+    # Create a connection to the database
     connection = pymysql.connect(host=host, user=user, password=password, db=database)
 
     try:
