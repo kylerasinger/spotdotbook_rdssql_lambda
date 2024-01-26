@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     password = os.environ['DB_PASSWORD']
     database = os.environ['DB_DATABASE']
 
-    # Create a connection to the database!
+    # Create a connection to the databasechange
     connection = pymysql.connect(host=host, user=user, password=password, db=database)
 
     try:
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
         print('Error: ', e)
         response = {
             'statusCode': 400,
-            'body': json.dumps('Error: internal server error')
+            'body': json.dumps('Error: internal server error!')
         }
     finally:
         connection.close()
